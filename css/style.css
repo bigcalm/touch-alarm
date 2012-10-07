@@ -1,0 +1,78 @@
+body {
+  font-family: arial, sans-serif;
+  background-color: #000000;
+  color: #eeeeee;
+}
+
+.clearFloat {
+  clear: both;
+}
+
+#clockWrapper {
+  font-size: 7em;
+}
+
+#alarmWrapper,
+#setAlarmWrapper,
+#controlWrapper {
+  border:3px solid #999;
+  padding:1em;
+  -moz-border-radius:8px;
+  -webkit-border-radius:8px;
+  -opera-border-radius:8px;
+  -khtml-border-radius:8px;
+  border-radius:8px;
+  
+  font-family: "courier-new", monospace;
+  font-size: 40px;
+}
+
+.fieldRow {
+  float: left;
+  padding-right: 20px;
+}
+
+.button {
+  
+  line-height: 1px;
+  width: auto;
+
+  color: #ffffff;
+  padding: 20px 13px 5px 13px;
+  margin: 0;
+
+  background: green;
+  border: solid 1px green;
+  -moz-border-radius:8px;
+  -webkit-border-radius:8px;
+  -opera-border-radius:8px;
+  -khtml-border-radius:8px;
+  border-radius:8px;
+
+  cursor: pointer;
+}
+  .button.no {
+    background: red;
+    border: solid 1px red;
+  }
+  .space {
+    margin-top: 1em;
+  }
+
+.button:active {
+  background-color: #111111;
+}
+
+ input {
+  border: none;
+  background-color: #121212;
+  color: #eeeeee;
+  font-family: "courier-new", monospace;
+  
+  font-size: 40px;
+  width: 1.3em;
+  height: 0.95em;
+  margin: 0;
+  padding: 0;
+}
+

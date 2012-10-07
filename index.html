@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+  <head>
+    <title>Alarm Clock</title>
+    <script type="text/javascript" src="js/jquery-1.4.4.min.js"></script>
+    <script type="text/javascript" src="js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="third_party/jwplayer/jwplayer.js"></script>
+    <script type="text/javascript" src="js/alarm_clock.js"></script>
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+  </head>
+  <body>
+    <div id="clockWrapper">
+      <div id="date">##DATE##</div>
+      <div id="time">##TIME##</div>
+    </div> <!-- /clockWrapper -->
+    
+    <div id="controlWrapper">
+      <div id="cancelSnoozeButton" class="fieldRow" style="float: left; display: none;">
+        <div class="button no" onclick="cancelSnooze();">cancel snooze</div>
+      </div>
+      <div class="fieldRow" style="float: right">
+        <div class="button" onclick="openSetAlarmWrapper();">set alarm</div>
+      </div>
+      <div class="clearFloat"></div>
+    </div>
+    
+    <div id="setAlarmWrapper" style="display: none;">
+    
+      <div class="fieldRow">
+        <div id="alarmHourPlus" class="button" onclick="alterField('alarmHour', 'up', 23)">+</div>
+        <input type="text" name="hour" id="alarmHour" />
+        <div id="alarmHourMinus" class="button" onclick="alterField('alarmHour', 'down', 23)">-</div>
+      </div>
+
+      <div class="fieldRow">
+        <div id="alarmMinutePlus" class="button" onclick="alterField('alarmMinute', 'up', 59)">+</div>
+        <input type="text" name="minute" id="alarmMinute" />
+        <div id="alarmMinuteMinus" class="button" onclick="alterField('alarmMinute', 'down', 59)">-</div>
+      </div>
+      
+      <div class="fieldRow">
+        <select name="alarmSound" id="alarmSound" onchange="changeAlarmSound()">
+          <option value="-1">No alarm</option>
+          <option value="sounds/wakeup.ogg">Wake Up</option>
+          <option value="sounds/18CrazyWords-CrazyTune.ogg">Crazy Words - Crazy Tune</option>
+          <!-- option value="mms://wmlive-acl.bbc.co.uk/wms/bbc_ami/radio2/radio2_bb_live_eq1_sl0?BBC-UID=549d30287b2d47c7578e3213a15e537933ab122ad09001d1929243435414a5c5&amp;SSO2-UID=">BBC Radio 2</option>
+          <option value="http://mp3-vr-128.as34763.net:80/">Absolute</option -->
+        </select>
+        
+        <div id="testSound" class="button" onclick="playAlarmSound('once')">test</div>
+      </div>
+
+      <div class="fieldRow" style="float: right">
+        <div class="button yes" onclick="setAlarm();closeSetAlarmWrapper();">confirm</div>
+        <div class="button no space" onclick="restoreAlarm();closeSetAlarmWrapper();">cancel</div>
+      </div>
+      
+      <div class="clearFloat"></div>
+      
+    </div> <!-- /setAlarmWrapper -->
+    
+    <div id="alarmWrapper" style="display: none;">
+
+      <div class="fieldRow">
+        <div id="snoozeAlarm" class="button" onclick="closeAlarmWrapper('snooze');">snooze</div>
+      </div>
+      <div class="fieldRow" style="float: right">
+        <div id="cancelAlarm" class="button no" onclick="cancelSnooze();closeAlarmWrapper();">cancel</div>
+      </div>
+
+      <div class="clearFloat"></div>
+      
+    </div> <!-- /alarmWrapper -->
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-2121480-4']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>    
+  </body>
+</html>
